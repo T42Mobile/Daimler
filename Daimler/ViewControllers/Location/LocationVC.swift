@@ -618,7 +618,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     
     @IBAction func segmentControlValueChanged(sender: UISegmentedControl)
     {
-        //self.getListOfIncident()
+        self.getListOfIncident()
     }
     // MARK: MAP VIEW DELEGATES
     
