@@ -233,6 +233,9 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var majorBtn: UIButton!
+    @IBOutlet weak var P1Btn: UIButton!
+    @IBOutlet weak var P2Btn: UIButton!
     
     var selectedTicket : String = ""
     
@@ -255,6 +258,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
         self.setInitialStateForMoreCondition()
         self.segmentControl.selectedSegmentIndex = 0
         self.segmentControlValueChanged(self.segmentControl)
+        self.setButtonToNormal()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -395,7 +399,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     @IBAction func incidentButtonAction(sender: UIButton)
     {
         let tag = sender.tag - 100
-        
+        self.setSelectedStateForTag(sender.tag)
         if tag < self.totalIncidentList.count
         {
             let incidentDetailList = self.totalIncidentList[tag]
@@ -411,6 +415,30 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
                 }
             }
         }
+    }
+    
+    func setSelectedStateForTag(tag : Int)
+    {
+        setButtonToNormal()
+        if tag == 100
+        {
+            self.majorBtn.selected = true
+        }
+        else if tag == 101
+        {
+            self.P1Btn.selected = true
+        }
+        else
+        {
+            self.P2Btn.selected = true
+        }
+    }
+    
+    func setButtonToNormal()
+    {
+        self.majorBtn.selected = false
+        self.P1Btn.selected = false
+        self.P2Btn.selected = false
     }
     
     @IBAction func nextButtonAction(sender: AnyObject)
@@ -590,7 +618,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     
     @IBAction func segmentControlValueChanged(sender: UISegmentedControl)
     {
-        self.getListOfIncident()
+        //self.getListOfIncident()
     }
     // MARK: MAP VIEW DELEGATES
     

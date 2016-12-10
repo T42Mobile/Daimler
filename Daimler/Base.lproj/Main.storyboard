@@ -606,14 +606,14 @@
                         <viewControllerLayoutGuide type="bottom" id="h2d-AN-g72"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fpK-TN-qbu">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-b5-ARQ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSP-N4-8ss" customClass="UILabelWithLeftPadding" customModule="MIT" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.66274509803921566" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -630,93 +630,113 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-9e-4N7">
-                                        <rect key="frame" x="0.0" y="30" width="600" height="35"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AF-3w-C1A">
+                                        <rect key="frame" x="0.0" y="30" width="120" height="65"/>
                                         <animations/>
+                                        <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-9e-4N7">
+                                        <rect key="frame" x="10" y="48" width="100" height="31"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="Xid-O6-5jN"/>
+                                            <constraint firstAttribute="height" constant="30" id="Xid-O6-5jN"/>
+                                            <constraint firstAttribute="width" constant="100" id="aS4-sY-mqX"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="New"/>
-                                            <segment title="All"/>
+                                            <segment title="NEW"/>
+                                            <segment title="ALL"/>
                                         </segments>
+                                        <color key="tintColor" red="0.22993800040000001" green="0.59843957420000005" blue="0.98966318369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="segmentControlValueChanged:" destination="RCy-6u-zC3" eventType="valueChanged" id="aAL-hb-V4E"/>
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiN-D3-3Lv">
-                                        <rect key="frame" x="150" y="70" width="100" height="65"/>
+                                        <rect key="frame" x="123" y="30" width="65" height="65"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="Sd4-QV-cVe"/>
-                                            <constraint firstAttribute="width" constant="100" id="t0c-GU-i32"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <inset key="titleEdgeInsets" minX="-8" minY="43" maxX="17" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="35" minY="0.0" maxX="0.0" maxY="22"/>
-                                        <state key="normal" title="MAJOR" image="red-baloon"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_normal_major">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="icon_selected_major"/>
                                         <connections>
                                             <action selector="incidentButtonAction:" destination="RCy-6u-zC3" eventType="touchUpInside" id="O21-66-zix"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1t-Vp-95e">
-                                        <rect key="frame" x="250" y="70" width="100" height="65"/>
+                                        <rect key="frame" x="188" y="30" width="65" height="65"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Z2N-NG-cmt"/>
                                             <constraint firstAttribute="height" constant="65" id="yua-I6-TkQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <inset key="titleEdgeInsets" minX="-8" minY="43" maxX="17" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="22"/>
-                                        <state key="normal" title="P1" image="orange-baloon"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_normal_P1">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="icon_selected_P1"/>
                                         <connections>
                                             <action selector="incidentButtonAction:" destination="RCy-6u-zC3" eventType="touchUpInside" id="F5e-mc-zjI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYu-Lw-Dnh">
-                                        <rect key="frame" x="350" y="70" width="100" height="65"/>
+                                        <rect key="frame" x="253" y="30" width="65" height="65"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="8el-cI-lXh"/>
-                                            <constraint firstAttribute="width" constant="100" id="sH8-sP-Sra"/>
+                                            <constraint firstAttribute="width" constant="65" id="sH8-sP-Sra"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <inset key="titleEdgeInsets" minX="-10" minY="43" maxX="17" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="22"/>
-                                        <state key="normal" title="P2" image="blue-baloon"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="icon_normal_P2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="icon_selected_P2"/>
                                         <connections>
                                             <action selector="incidentButtonAction:" destination="RCy-6u-zC3" eventType="touchUpInside" id="Usk-9i-qQQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="YMU-9e-4N7" firstAttribute="centerY" secondItem="JiN-D3-3Lv" secondAttribute="centerY" id="1iy-Sw-Xtu"/>
                                     <constraint firstItem="kSP-N4-8ss" firstAttribute="leading" secondItem="Ttn-b5-ARQ" secondAttribute="leading" id="5zB-qw-sqJ"/>
                                     <constraint firstAttribute="trailing" secondItem="kSP-N4-8ss" secondAttribute="trailing" id="8TX-Qb-ygB"/>
-                                    <constraint firstAttribute="trailing" secondItem="YMU-9e-4N7" secondAttribute="trailing" id="IHG-Lz-6Hu"/>
+                                    <constraint firstAttribute="bottom" secondItem="8AF-3w-C1A" secondAttribute="bottom" id="I24-uX-6BC"/>
+                                    <constraint firstItem="8AF-3w-C1A" firstAttribute="top" secondItem="kSP-N4-8ss" secondAttribute="bottom" id="JnZ-Db-PL0"/>
                                     <constraint firstItem="SYu-Lw-Dnh" firstAttribute="leading" secondItem="M1t-Vp-95e" secondAttribute="trailing" id="Lgg-5R-FOp"/>
                                     <constraint firstItem="M1t-Vp-95e" firstAttribute="leading" secondItem="JiN-D3-3Lv" secondAttribute="trailing" id="Ncv-1I-g1P"/>
+                                    <constraint firstItem="M1t-Vp-95e" firstAttribute="width" secondItem="JiN-D3-3Lv" secondAttribute="width" id="P9A-Gj-Wzj"/>
+                                    <constraint firstItem="8AF-3w-C1A" firstAttribute="leading" secondItem="Ttn-b5-ARQ" secondAttribute="leading" id="UJL-6A-6XT"/>
                                     <constraint firstItem="kSP-N4-8ss" firstAttribute="top" secondItem="Ttn-b5-ARQ" secondAttribute="top" id="VD3-o9-Dtr"/>
                                     <constraint firstItem="JiN-D3-3Lv" firstAttribute="bottom" secondItem="M1t-Vp-95e" secondAttribute="bottom" id="eC9-8M-ExA"/>
-                                    <constraint firstAttribute="height" constant="135" id="gDs-4S-dYf"/>
-                                    <constraint firstItem="M1t-Vp-95e" firstAttribute="centerX" secondItem="Ttn-b5-ARQ" secondAttribute="centerX" id="hey-mS-qZq"/>
-                                    <constraint firstItem="YMU-9e-4N7" firstAttribute="top" secondItem="kSP-N4-8ss" secondAttribute="bottom" id="kgf-gH-ICM"/>
-                                    <constraint firstItem="YMU-9e-4N7" firstAttribute="leading" secondItem="Ttn-b5-ARQ" secondAttribute="leading" id="l3E-xP-od3"/>
+                                    <constraint firstAttribute="height" constant="95" id="gDs-4S-dYf"/>
+                                    <constraint firstItem="YMU-9e-4N7" firstAttribute="leading" secondItem="Ttn-b5-ARQ" secondAttribute="leading" constant="10" id="l3E-xP-od3"/>
                                     <constraint firstItem="SYu-Lw-Dnh" firstAttribute="bottom" secondItem="M1t-Vp-95e" secondAttribute="bottom" id="ma1-A9-DWW"/>
                                     <constraint firstAttribute="bottom" secondItem="M1t-Vp-95e" secondAttribute="bottom" id="n1P-M4-Pcg"/>
+                                    <constraint firstItem="8AF-3w-C1A" firstAttribute="trailing" secondItem="YMU-9e-4N7" secondAttribute="trailing" constant="10" id="rbZ-ai-X7v"/>
+                                    <constraint firstItem="M1t-Vp-95e" firstAttribute="centerX" secondItem="Ttn-b5-ARQ" secondAttribute="centerX" constant="60" id="t6U-4T-Y7t"/>
+                                    <constraint firstItem="SYu-Lw-Dnh" firstAttribute="width" secondItem="M1t-Vp-95e" secondAttribute="width" id="zC1-VR-h8r"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OZJ-9F-mU5">
-                                <rect key="frame" x="0.0" y="135" width="600" height="201"/>
+                                <rect key="frame" x="0.0" y="95" width="320" height="121"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="delegate" destination="RCy-6u-zC3" id="u4j-j8-uZP"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8V-mE-wZb">
-                                <rect key="frame" x="550" y="155" width="30" height="30"/>
+                                <rect key="frame" x="270" y="115" width="30" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -731,10 +751,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgP-GM-atk" userLabel="sliderView">
-                                <rect key="frame" x="0.0" y="336" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="216" width="320" height="100"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="STb-2S-HNy">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Ibm-3M-5MS">
@@ -801,7 +821,7 @@
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEv-zB-2Gg" userLabel="nextBtn">
-                                        <rect key="frame" x="570" y="0.0" width="30" height="100"/>
+                                        <rect key="frame" x="290" y="0.0" width="30" height="100"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -842,10 +862,10 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVX-1z-CQL" userLabel="Detail view">
-                                <rect key="frame" x="0.0" y="436" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="316" width="320" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQh-qf-8hP">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="320" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.1019607843" green="0.66274509800000003" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -859,10 +879,10 @@
                                         </connections>
                                     </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcB-2u-sBc">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call-option-next" translatesAutoresizingMaskIntoConstraints="NO" id="3vl-ll-Cd8">
-                                                <rect key="frame" x="568" y="10" width="32" height="40"/>
+                                                <rect key="frame" x="288" y="10" width="32" height="40"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="2Je-RS-S1s"/>
@@ -889,14 +909,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOO-AT-Ai2" userLabel="service buttonButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="500" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="60"/>
                                                 <animations/>
                                                 <connections>
                                                     <action selector="serviceDeskButtonAction:" destination="RCy-6u-zC3" eventType="touchUpInside" id="CQ7-Ki-ZnN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDv-cL-cwc" userLabel="call button">
-                                                <rect key="frame" x="500" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="220" y="0.0" width="60" height="60"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="rWO-78-RaX"/>
@@ -944,7 +964,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzO-BT-h1K">
-                                <rect key="frame" x="550" y="286" width="30" height="30"/>
+                                <rect key="frame" x="270" y="166" width="30" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -984,12 +1004,16 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="QSE-nL-wp0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="P1Btn" destination="M1t-Vp-95e" id="DdQ-cj-qfy"/>
+                        <outlet property="P2Btn" destination="SYu-Lw-Dnh" id="Nmb-NR-eOj"/>
                         <outlet property="backBtn" destination="vHz-0L-nfN" id="HtC-UN-1Di"/>
                         <outlet property="callButtonWidthCnt" destination="rWO-78-RaX" id="1wQ-Wj-dNf"/>
                         <outlet property="currentLocationLabel" destination="kSP-N4-8ss" id="1jU-Gh-kga"/>
                         <outlet property="incidentCollectionView" destination="STb-2S-HNy" id="or7-Xe-Ye7"/>
                         <outlet property="incidentCollectionViewHeight" destination="hrv-hS-XRs" id="YOt-sd-m4c"/>
+                        <outlet property="majorBtn" destination="JiN-D3-3Lv" id="rh3-cT-K7Z"/>
                         <outlet property="mapView" destination="OZJ-9F-mU5" id="VmS-PX-HQw"/>
                         <outlet property="moreDetailHgtCnt" destination="ytT-Qg-g3h" id="fvY-pz-YLR"/>
                         <outlet property="nextBtn" destination="uEv-zB-2Gg" id="zFh-8a-2yc"/>
@@ -2880,7 +2904,6 @@ Version - 1.0.1</string>
     </scenes>
     <resources>
         <image name="about_logo" width="180" height="180"/>
-        <image name="blue-baloon" width="28" height="52"/>
         <image name="call-icon-green" width="150" height="150"/>
         <image name="call-option-next" width="104" height="136"/>
         <image name="circleSelected" width="35" height="35"/>
@@ -2900,14 +2923,18 @@ Version - 1.0.1</string>
         <image name="icon-titleDetail-Dashboards" width="398" height="405"/>
         <image name="icon-titleDetail-KPI" width="397" height="406"/>
         <image name="icon-titleDetail-MIT" width="398" height="404"/>
+        <image name="icon_normal_P1" width="130" height="130"/>
+        <image name="icon_normal_P2" width="130" height="130"/>
+        <image name="icon_normal_major" width="130" height="130"/>
+        <image name="icon_selected_P1" width="130" height="130"/>
+        <image name="icon_selected_P2" width="130" height="130"/>
+        <image name="icon_selected_major" width="130" height="130"/>
         <image name="left" width="60" height="60"/>
         <image name="login-panel" width="909" height="251"/>
         <image name="login-screen" width="1242" height="2208"/>
         <image name="mapReload" width="225" height="225"/>
         <image name="merc1" width="960" height="640"/>
         <image name="merc1.jpg" width="960" height="640"/>
-        <image name="orange-baloon" width="28" height="52"/>
-        <image name="red-baloon" width="28" height="52"/>
         <image name="right" width="60" height="60"/>
         <image name="service-desk" width="180" height="180"/>
         <image name="servicedesk" width="64" height="64"/>
