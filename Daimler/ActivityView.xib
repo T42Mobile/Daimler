@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ActivityView" customModule="MIT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2m0-Vg-Lwo">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcg-ea-eqh" userLabel="Activity view">
+                            <rect key="frame" x="239" y="281" width="123" height="38"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IaG-Zp-i3j">
+                                    <rect key="frame" x="8" y="9" width="20" height="20"/>
+                                    <animations/>
+                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9N-3z-zSI">
+                                    <rect key="frame" x="36" y="8" width="75" height="21"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="z9N-3z-zSI" firstAttribute="centerY" secondItem="Bcg-ea-eqh" secondAttribute="centerY" id="6rq-rZ-4kE"/>
+                                <constraint firstItem="IaG-Zp-i3j" firstAttribute="leading" secondItem="Bcg-ea-eqh" secondAttribute="leading" constant="8" id="VEN-Ce-GUv"/>
+                                <constraint firstItem="z9N-3z-zSI" firstAttribute="top" secondItem="Bcg-ea-eqh" secondAttribute="top" constant="8" id="brM-kt-R9M"/>
+                                <constraint firstItem="z9N-3z-zSI" firstAttribute="leading" secondItem="IaG-Zp-i3j" secondAttribute="trailing" constant="8" id="fK7-K5-W1A"/>
+                                <constraint firstAttribute="trailing" secondItem="z9N-3z-zSI" secondAttribute="trailing" constant="12" id="tel-1L-leE"/>
+                                <constraint firstItem="z9N-3z-zSI" firstAttribute="centerY" secondItem="IaG-Zp-i3j" secondAttribute="centerY" id="zpK-36-8nx"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Bcg-ea-eqh" firstAttribute="centerY" secondItem="2m0-Vg-Lwo" secondAttribute="centerY" id="DdX-fy-jZc"/>
+                        <constraint firstItem="Bcg-ea-eqh" firstAttribute="centerX" secondItem="2m0-Vg-Lwo" secondAttribute="centerX" id="W9Q-yi-r4x"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2m0-Vg-Lwo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FEL-6t-jaB"/>
+                <constraint firstAttribute="bottom" secondItem="2m0-Vg-Lwo" secondAttribute="bottom" id="c74-XX-xC3"/>
+                <constraint firstItem="2m0-Vg-Lwo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="u7D-Pq-v7n"/>
+                <constraint firstAttribute="trailing" secondItem="2m0-Vg-Lwo" secondAttribute="trailing" id="xe0-Ey-Klb"/>
+            </constraints>
+            <connections>
+                <outlet property="activityTextLbl" destination="z9N-3z-zSI" id="0Xg-Bv-jKU"/>
+                <outlet property="borderView" destination="Bcg-ea-eqh" id="t3M-GU-hBB"/>
+            </connections>
+        </view>
+    </objects>
+</document>
