@@ -1164,10 +1164,10 @@
                                             <action selector="backButtonAction:" destination="35S-28-Uak" eventType="touchUpInside" id="3OV-Lo-Vfz"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-le-LRt">
-                                        <rect key="frame" x="282" y="12" width="36" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIT – Help Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-le-LRt">
+                                        <rect key="frame" x="222" y="12" width="156" height="21"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1188,151 +1188,82 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">MIT (Mobile Incident Tracker), a mobile application provides an instant reporting for Major incidents and P1 / P2 tickets reported across several Global business partners of Daimler ITGS departments.
-
-MIT provides a way to keep on top of things in cases of high impact, high visibility or critical system tickets, across locations.
-
-</string>
+                                    <fragment content="About MIT app:">
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="How to view Tabular data?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
                                         <string key="content">
-
-In MIT page, tap on the table icon at the top right. It will land in summary page with compartmentalized view of Major, P1 and P2. Here you have an privilege to view on ‘Map’ as well as ‘View Detail’.
-
+MIT (Mobile Incident Tracker), a mobile application provides an instant reporting for Major incidents and P1 / P2 tickets reported across CISM instances globally. Your CISM instance must be registered for the tickets to be visible on the App. The MIT app would work seamlessly on your Company Owned Devices (CoD) while connected to the company network. While on the move you require an active network connection and would need to enable VPN to ensure that the MIT app is connected.
+World map view – The basics:
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Will the data in the map get refreshed automatically?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-
-No. To refresh, please tap on the refresh icon at the bottom right of the map.
-
+                                        <string key="content">•	You can see the tickets visible via Location Pins which are colour coded to represent the ticket priority. 
+•	The colour of the pin in case of multiple tickets would be the highest priority colour for the tickets at that location
+•	A location pin with a “badge count” containing numbers represent the total number of tickets at that plant / location.
+•	In case of “badge count” tickets there would be a carousel at the bottom to scroll and see through multiple tickets
+•	Clicking on a ticket would take you to the detailed view on the tickets with timeline and other details
+•	The filter bar contains 5 different views 
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Can I set the preferences?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-
-Yes. Tap on the hamburger menu and select ‘Preferences’ menu. There you can customize your view in terms of Regions, Priority and Time Zone. After selecting, tap ‘</string>
+                                        <string key="content">o	the past 4 weeks or 
+o	toggle for 24 hours
+o	Exclusive view for MAJOR incident tickets (if preferences are set)
+o	Exclusive view for P1 priority tickets (if preferences are set)
+o	Exclusive view for P2 priority tickets (if preferences are set)
+</string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Save">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">’ at the top right of the app. And refresh MIT map page, screen will be painted according to the preferences set.
-
+                                        <string key="content">•	You can also select a certain priority and see tickets of that priority only. This may need your preferences to be suitably set.
+•	A tabular view is also available via the icon on top right of the map
+•	A refresh button is provided on the bottom right which will refresh the view based on your preference settings. Any other filters would be reset upon hitting the refresh button.
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Not able to view  P1 and P2 tickets?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
+                                        <string key="content">Will the data in the map get refreshed automatically?
+No. While the APP is open there is a manual refresh using the refresh icon on bottom right of the map. However while the App is closed, you will get notifications for MAJOR incidents only and if you open the app it would result in the latest status to be fetched from the server.
 
-If you are getting an alert stating,  ‘Sorry your preference is not set for the selected option. To view, please modify your preferences’.
-It means you have selected only the ‘Major’ as preference, and while tap on the ‘P1’ and ‘P2’ ballon you end up with above alert.
-To view the rest, please change your preferences accordingly and refresh the MIT map page.
+Can I set the preferences?
+Yes. Tap on the hamburger menu and select ‘Preferences’ menu. There you can customize your view in terms Priority and Time Zone. After selecting, tap ‘Save’ at the top right of the app. And refresh on the world map page, the data on screen would be refreshed according to the latest preferences set.
 
+Not able to view P1 or P2 tickets?
+If you are getting an alert stating, ‘Sorry your preference is not set for the selected option. To view, please modify your preferences’. It means you have not selected the preference for either P1 or P2 or both. To view other tickets, please change your preferences accordingly and refresh the MIT map page.
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="How to view individual tickets on a cluster?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-
-If you have multiple tickets (eg: Major) on a same location. Map will provide with ‘Badge’ as count, with the carousel at the  bottom with next and back arrows.
-
-Which provides you a ticket ID and short description.
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="How to view details of the ticket?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-
-On MIT map view or Tabular view, tap on any particular ticket and select for details. It will land to the Timeline view along with ‘Details’ tab.
-
-Tap ‘Details’ tab for detailed view of the ticket.
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Request timeout and app keeps on loading?
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Best way to rectify is check your network connections are perfect and ensure the VPN is connected.">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

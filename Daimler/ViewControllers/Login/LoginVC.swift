@@ -135,7 +135,14 @@ class LoginVC: UIViewController,NSXMLParserDelegate
                         }
                         else
                         {
-                            self.showAuthenticationAlert()
+                            if let statusMessage =  loginDetail.objectForKey("STATUSMESSAGE") as? String
+                            {
+                                CommonFunctions.showAlertView("Alert", message : statusMessage, viewController : self)
+                            }
+                            else
+                            {
+                                self.showAuthenticationAlert()
+                            }
                         }
                     }
                     else
@@ -237,7 +244,8 @@ class LoginVC: UIViewController,NSXMLParserDelegate
         }
         
         CommonFunctions.saveListOfSelectedPriorityFromServer(selectedPriorities.componentsSeparatedByString(","))
-        CommonFunctions.saveListOfSelectedRegion(selectedRegion.componentsSeparatedByString(","))
+       // CommonFunctions.saveListOfSelectedRegion(selectedRegion.componentsSeparatedByString(","))
+        CommonFunctions.saveRegion(selectedRegion)
     }
     
     func keyBoardWillShow(notification : NSNotification)

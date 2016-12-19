@@ -142,6 +142,20 @@ class CommonFunctions: NSObject
         return compoundString
     }
     
+    class func saveRegion(region : String)
+    {
+        NSUserDefaults.standardUserDefaults().setObject(region, forKey: "regionPreferred")
+    }
+    
+    class func getPreferredRegion() -> String
+    {
+        if let region = NSUserDefaults.standardUserDefaults().objectForKey("regionPreferred") as? String
+        {
+            return region
+        }
+        return ""
+    }
+    
     class func saveListOfSelectedRegion(selectedRegion : [String])
     {
         NSUserDefaults.standardUserDefaults().setObject(selectedRegion, forKey: "regionSelected")

@@ -309,8 +309,8 @@ class PreferencesViewController: UIViewController, UITableViewDataSource , UITab
     
     @IBAction func saveButtonAction(sender: AnyObject)
     {
-        
-        let selectedRegion = CommonFunctions.convertArrayOfStringIntoString(CommonFunctions.getListOfRegionSelected())
+        let selectedRegion = CommonFunctions.getPreferredRegion()
+        //let selectedRegion = CommonFunctions.convertArrayOfStringIntoString(CommonFunctions.getListOfRegionSelected())
         
         //let selectedRegion = CommonFunctions.convertArrayOfStringIntoString(CommonFunctions.getListOfSelectedRegionName(self.regionDetailArray))
         

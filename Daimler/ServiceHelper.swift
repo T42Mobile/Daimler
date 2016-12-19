@@ -24,14 +24,14 @@ class ServiceHelper: NSObject {
             
             let selectedPriority = CommonFunctions.convertArrayOfStringIntoString(CommonFunctions.getListOfPrioritySelected())
             
-            var selectedRegion = CommonFunctions.getListOfRegionSelected()
-            
-            if selectedRegion.count == 0
-            {
-                selectedRegion.append("All")
-            }
-            let selectedRegionString = CommonFunctions.convertArrayOfStringIntoString(selectedRegion)
-            
+//            var selectedRegion = CommonFunctions.getListOfRegionSelected()
+//            
+//            if selectedRegion.count == 0
+//            {
+//                selectedRegion.append("All")
+//            }
+//            let selectedRegionString = CommonFunctions.convertArrayOfStringIntoString(selectedRegion)
+            let selectedRegionString = CommonFunctions.getPreferredRegion()
             
             let postString = "location=\(selectedRegionString)&priority=\(selectedPriority)&Ticket_Type=\(ticketType)"
             

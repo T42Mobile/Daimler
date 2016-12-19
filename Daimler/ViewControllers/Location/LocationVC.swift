@@ -153,7 +153,6 @@ class IncidentDetailModel : NSObject
         incidentList.append(filterDetailFromList(convertedList, incidentType: "1"))
         incidentList.append(filterDetailFromList(convertedList, incidentType: "2"))
         
-        
         return incidentList
     }
     
@@ -275,6 +274,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     
     func getListOfIncident()
     {
+        self.setButtonToNormal()
         let appDelegate = CommonFunctions.getAppDelegate()
         CommonFunctions.showIndicatorView(appDelegate.window! ,isInteractionEnabled: false )
         
@@ -294,12 +294,13 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
                 }
                 else
                 {
-                    self.addListOfAnnotationToMapView(NSDictionary())
+                    self.setTotalIncidentListFromServer([])
                     CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
                 }
             }
             else
             {
+                self.setTotalIncidentListFromServer([])
                 CommonFunctions.showAlertView("Alert", message : error?.localizedDescription, viewController : self)
             }
         })
@@ -308,6 +309,7 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     func addListOfAnnotationToMapView(locationDetailDict : NSDictionary)
     {
         mapView.removeAnnotations(mapView.annotations)
+        
         for key in locationDetailDict.allKeys as! [String]
         {
             let listOfIncident = locationDetailDict.objectForKey(key) as! [IncidentDetailModel]
@@ -412,6 +414,10 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
                 if !CommonFunctions.getListOfPrioritySelected().contains(["Major" , "1" , "2"][tag])
                 {
                     CommonFunctions.showAlertView("Alert", message: "Sorry, your preference is not set for selected option. To view, please modify your preferences.", viewController: self)
+                }
+                else
+                {
+                    CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
                 }
             }
         }
