@@ -557,7 +557,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2af13614-462a-42e5-bebf-4abfd5d3408e";
+				PROVISIONING_PROFILE = "9a3a8fb4-f337-4ee1-8c8f-6c2e132a208c";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -598,7 +598,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "2af13614-462a-42e5-bebf-4abfd5d3408e";
+				PROVISIONING_PROFILE = "9a3a8fb4-f337-4ee1-8c8f-6c2e132a208c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -609,14 +609,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Prathap Vijayarangan (54NBPVPWQX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prathap Vijayarangan (54NBPVPWQX)";
 				INFOPLIST_FILE = Daimler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.mit.internal.ios.development;
 				PRODUCT_NAME = MIT;
-				PROVISIONING_PROFILE = "2af13614-462a-42e5-bebf-4abfd5d3408e";
+				PROVISIONING_PROFILE = "9a3a8fb4-f337-4ee1-8c8f-6c2e132a208c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Daimler/Help/Daimler-Bridging-Header.h";
 			};
 			name = Debug;
@@ -625,14 +625,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Prathap Vijayarangan (54NBPVPWQX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prathap Vijayarangan (54NBPVPWQX)";
 				INFOPLIST_FILE = Daimler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.mit.internal.ios.development;
 				PRODUCT_NAME = MIT;
-				PROVISIONING_PROFILE = "2af13614-462a-42e5-bebf-4abfd5d3408e";
+				PROVISIONING_PROFILE = "9a3a8fb4-f337-4ee1-8c8f-6c2e132a208c";
 				SWIFT_OBJC_BRIDGING_HEADER = "Daimler/Help/Daimler-Bridging-Header.h";
 			};
 			name = Release;

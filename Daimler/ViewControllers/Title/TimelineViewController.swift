@@ -370,6 +370,14 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             {
                 UIApplication.sharedApplication().openURL(url)
             }
+            else
+            {
+                CommonFunctions.showAlertView("Alert", message: "Unable to make a call to the number \(incidentDetail.bridgeNumber)", viewController: self)
+            }
+        }
+        else
+        {
+            CommonFunctions.showAlertView("Alert", message: "NO MIM number available.", viewController: self)
         }
     }
     
@@ -381,6 +389,14 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             {
                 UIApplication.sharedApplication().openURL(url)
             }
+            else
+            {
+                CommonFunctions.showAlertView("Alert", message: "Unable to make a call to the number \(incidentDetail.serviceDeskNumber)", viewController: self)
+            }
+        }
+        else
+        {
+            CommonFunctions.showAlertView("Alert", message: "NO service desk number available.", viewController: self)
         }
     }
 }
