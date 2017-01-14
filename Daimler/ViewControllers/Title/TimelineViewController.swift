@@ -24,6 +24,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var createdLabel:UILabel?
     @IBOutlet weak var lastModifiedLabel:UILabel?
     @IBOutlet weak var closureExpLabel:UILabel?
+    @IBOutlet weak var timezoneLabel: UILabel!
     
     @IBOutlet weak var ticketOpenImgView:UIImageView?
     @IBOutlet weak var assignedImgView:UIImageView?
@@ -52,6 +53,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //MARK:-- Progress View
     
+    @IBOutlet weak var progressOuterView: UIView!
+    @IBOutlet weak var createdProgressLabel: UILabel!
+    @IBOutlet weak var SLAProgressLabel: UILabel!
     @IBOutlet var progressStatusView: UIView!
     @IBOutlet var progressHgtCnt: NSLayoutConstraint!
     @IBOutlet var progressImageView: UIImageView!
@@ -105,17 +109,18 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func getTicketDetailsData()
     {
-        ticketTitleArray = ["Ticket ID", "Priority", "Status", "Creation Date", "Last Modification Date", "Assigned to Group", "Short Description", "Log Details", "SLA Time", "Owner Plant", "Owner Department", "Classification", "Component Type"]
+        ticketTitleArray = ["Ticket ID", "Priority", "Status", "Creation Date", "Last Modification Date","SLA Time","Time Zone", "Assigned to Group", "Short Description", "Log Details",  "Owner Plant", "Owner Department", "Classification", "Component Type"]
         
         ticketDetailsArray.append(incidentDetail.ticketId )
         ticketDetailsArray.append(incidentDetail.priority )
         ticketDetailsArray.append(incidentDetail.status )
         ticketDetailsArray.append(incidentDetail.creationDate )
         ticketDetailsArray.append(incidentDetail.modificationDate )
+        ticketDetailsArray.append(incidentDetail.slaTime )
+        ticketDetailsArray.append(incidentDetail.timeZone )
         ticketDetailsArray.append(incidentDetail.assignedToGroup )
         ticketDetailsArray.append(incidentDetail.shortDescription )
         ticketDetailsArray.append(incidentDetail.details )
-        ticketDetailsArray.append(incidentDetail.slaTime )
         ticketDetailsArray.append(incidentDetail.plantName )
         ticketDetailsArray.append(incidentDetail.ownerDepartment )
         ticketDetailsArray.append(incidentDetail.classification )
@@ -169,6 +174,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         self.createdLabel?.text = incidentDetail.creationDate + "\n Created"
         self.lastModifiedLabel?.text = incidentDetail.modificationDate + "\n Last Modified"
         self.closureExpLabel?.text = incidentDetail.slaTime + "\n Closure Expected by SLA"
+        self.timezoneLabel.text = incidentDetail.timeZone
         
         let selectedImage = UIImage(named: "circleSelected")
         let unselectedImage  = UIImage(named: "circleUnSelected")
@@ -189,8 +195,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let status = incidentDetail.status.uppercaseString
         
-        var heightCnt : CGFloat = 0
-        var progressImage : String = ""
+        
         
         if status == "OPEN"
         {
@@ -198,39 +203,77 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else if status == "ASSIGNED"
         {
-            heightCnt = 0.25
-            progressImage = "bar-gr"
+           
             self.ticketAssignedStatusImgView.image = selectedImage
         }
         else if status == "WIP"
         {
-            heightCnt = 0.5
-            progressImage = "bar-gr-ye"
+            
             self.ticketWIPStatusImgView.image = selectedImage
         }
         else if status == "SLEEP"
         {
-            heightCnt = 0.75
-            progressImage = "bar-all"
+            
             self.ticketSleepStatusImgView.image = selectedImage
         }
         else if status == "CLOSED"
         {
-            heightCnt = 1
-            progressImage = "bar-all"
             self.ticketClosedStatusImgView.image = selectedImage
         }
         
-        let slaTimeDate = convertToDate(incidentDetail.slaTime)
-        if NSDate().compare(slaTimeDate) == NSComparisonResult.OrderedDescending
+        if incidentDetail.slaTime != "N/A"
         {
-            progressImage = "bar-red"
-            heightCnt = 1
+            var heightCnt : CGFloat = 0
+            var progressImage : String = ""
+            self.progressOuterView.hidden = false
+            self.createdProgressLabel.hidden = false
+            self.SLAProgressLabel.hidden = false
+            let slaTimeDate = convertToDate(incidentDetail.slaTime)
+            if NSDate().compare(slaTimeDate) == NSComparisonResult.OrderedDescending
+            {
+                progressImage = "bar-red"
+                heightCnt = 1
+            }
+            else
+            {
+                let createdDate = convertToDate(incidentDetail.creationDate)
+                let differenceInTime = slaTimeDate.timeIntervalSinceDate(createdDate)
+                let currentInterval = NSDate().timeIntervalSinceDate(createdDate)
+                
+                let ratio = currentInterval / differenceInTime
+                
+                if ratio <= 0.25
+                {
+                    heightCnt = 0.25
+                    progressImage = "bar-gr"
+                }
+                else if ratio <= 0.5
+                {
+                    heightCnt = 0.5
+                    progressImage = "bar-gr-ye"
+                }
+                else if ratio <= 0.75
+                {
+                    heightCnt = 0.75
+                    progressImage = "bar-all"
+                }
+                else
+                {
+                    heightCnt = 1
+                    progressImage = "bar-all"
+                }
+            }
+            self.progressHgtCnt.constant = heightCnt * ((timelineDetailsView?.frame.size.height)! - 80)
+            self.progressImageView.image = UIImage(named: progressImage)
+        }
+        else
+        {
+            self.progressOuterView.hidden = true
+            self.createdProgressLabel.hidden = true
+            self.SLAProgressLabel.hidden = true
         }
         
-        //let mainViewHeight = UIScreen.mainScreen().bounds.size.height
-        self.progressHgtCnt.constant = heightCnt * (timelineDetailsView?.frame.size.height)! - 80
-        self.progressImageView.image = UIImage(named: progressImage)
+       
     }
     
     func backButtonClicked(sender: UIBarButtonItem) {

@@ -90,11 +90,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "deviceToken")
-        print("Device Token:", tokenString)
+        
+       // CommonFunctions.showAlertView("Alert", message : "Device Token:" + tokenString, viewController : self.window!.rootViewController!)
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
+    {
         print("Failed to register:", error)
+        
+       // CommonFunctions.showAlertView("Alert device token error", message : error.localizedDescription, viewController : self.window!.rootViewController!)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])

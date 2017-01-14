@@ -206,7 +206,7 @@
                                 <rect key="frame" x="0.0" y="54" width="414" height="682"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-So-4O7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="413"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="353"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="merc1" translatesAutoresizingMaskIntoConstraints="NO" id="p24-J4-uhs">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -228,7 +228,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knL-hz-Xef" userLabel="Bottom view">
-                                                <rect key="frame" x="0.0" y="150" width="414" height="263"/>
+                                                <rect key="frame" x="0.0" y="150" width="414" height="203"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMIZE YOUR VIEW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl1-kT-tvT">
                                                         <rect key="frame" x="111" y="12" width="193" height="21"/>
@@ -426,35 +426,35 @@
                                                         </constraints>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4c-5g-rjm" userLabel="Time Zone">
-                                                        <rect key="frame" x="16" y="193" width="382" height="60"/>
+                                                        <rect key="frame" x="16" y="193" width="382" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Time Zone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czr-kN-uBN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
                                                                 <animations/>
                                                                 <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="24" id="oTS-78-m59"/>
+                                                                    <constraint firstAttribute="height" id="oTS-78-m59"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Chennai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJt-rL-0FQ">
-                                                                <rect key="frame" x="4" y="24" width="374" height="36"/>
+                                                                <rect key="frame" x="4" y="0.0" width="374" height="0.0"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH9-hp-AF6">
-                                                                <rect key="frame" x="4" y="24" width="374" height="36"/>
+                                                                <rect key="frame" x="4" y="0.0" width="374" height="0.0"/>
                                                                 <animations/>
                                                                 <connections>
                                                                     <action selector="timeZoneButtonAction:" destination="J99-Q4-niW" eventType="touchUpInside" id="LzW-3I-y8U"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zz-DB-KAC" userLabel="SeperatorView">
-                                                                <rect key="frame" x="0.0" y="56" width="382" height="4"/>
+                                                                <rect key="frame" x="0.0" y="-4" width="382" height="4"/>
                                                                 <animations/>
                                                                 <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -466,14 +466,14 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="EH9-hp-AF6" firstAttribute="top" secondItem="kJt-rL-0FQ" secondAttribute="top" id="7Iu-1V-6we"/>
-                                                            <constraint firstAttribute="bottom" secondItem="3Zz-DB-KAC" secondAttribute="bottom" id="AZA-Mv-zDr"/>
+                                                            <constraint firstItem="3Zz-DB-KAC" firstAttribute="top" secondItem="EH9-hp-AF6" secondAttribute="bottom" constant="-4" id="Fbs-ei-S4t"/>
                                                             <constraint firstItem="EH9-hp-AF6" firstAttribute="bottom" secondItem="kJt-rL-0FQ" secondAttribute="bottom" id="LAV-kw-Iet"/>
                                                             <constraint firstItem="czr-kN-uBN" firstAttribute="leading" secondItem="O4c-5g-rjm" secondAttribute="leading" id="UR5-hf-ige"/>
                                                             <constraint firstAttribute="trailing" secondItem="czr-kN-uBN" secondAttribute="trailing" id="VQ7-o5-1zd"/>
                                                             <constraint firstItem="kJt-rL-0FQ" firstAttribute="leading" secondItem="O4c-5g-rjm" secondAttribute="leading" constant="4" id="YGo-ec-Tio"/>
                                                             <constraint firstAttribute="trailing" secondItem="3Zz-DB-KAC" secondAttribute="trailing" id="dB2-W5-Pd0"/>
                                                             <constraint firstItem="3Zz-DB-KAC" firstAttribute="leading" secondItem="O4c-5g-rjm" secondAttribute="leading" id="g7x-8x-flI"/>
-                                                            <constraint firstAttribute="height" constant="60" id="lan-pN-2dZ"/>
+                                                            <constraint firstAttribute="height" id="lan-pN-2dZ"/>
                                                             <constraint firstItem="czr-kN-uBN" firstAttribute="top" secondItem="O4c-5g-rjm" secondAttribute="top" id="mPb-hz-ucb"/>
                                                             <constraint firstAttribute="bottom" secondItem="kJt-rL-0FQ" secondAttribute="bottom" id="oDf-GT-taf"/>
                                                             <constraint firstItem="kJt-rL-0FQ" firstAttribute="top" secondItem="czr-kN-uBN" secondAttribute="bottom" id="peK-nR-XaZ"/>
@@ -483,7 +483,7 @@
                                                         </constraints>
                                                     </view>
                                                     <tableView clipsSubviews="YES" tag="3" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="34" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-1r-cLk">
-                                                        <rect key="frame" x="16" y="253" width="382" height="0.0"/>
+                                                        <rect key="frame" x="16" y="193" width="382" height="0.0"/>
                                                         <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1188,80 +1188,326 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="About MIT app:">
+                                    <fragment>
+                                        <string key="content">About MIT app:
+</string>
                                         <attributes>
-                                            <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">
-MIT (Mobile Incident Tracker), a mobile application provides an instant reporting for Major incidents and P1 / P2 tickets reported across CISM instances globally. Your CISM instance must be registered for the tickets to be visible on the App. The MIT app would work seamlessly on your Company Owned Devices (CoD) while connected to the company network. While on the move you require an active network connection and would need to enable VPN to ensure that the MIT app is connected.
+                                        <string key="content">MIT (Mobile Incident Tracker), a mobile application provides an instant reporting for Major incidents and P1 / P2 tickets reported across CISM instances globally. Your CISM instance must be registered for the tickets to be visible on the App. The MIT app would work seamlessly on your Company Owned Devices (CoD) while connected to the company network. While on the move you require an active network connection and would need to enable VPN to ensure that the MIT app is connected.
 World map view – The basics:
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">•	You can see the tickets visible via Location Pins which are colour coded to represent the ticket priority. 
-•	The colour of the pin in case of multiple tickets would be the highest priority colour for the tickets at that location
-•	A location pin with a “badge count” containing numbers represent the total number of tickets at that plant / location.
-•	In case of “badge count” tickets there would be a carousel at the bottom to scroll and see through multiple tickets
-•	Clicking on a ticket would take you to the detailed view on the tickets with timeline and other details
-•	The filter bar contains 5 different views 
-</string>
+                                        <string key="content">•	</string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">o	the past 4 weeks or 
-o	toggle for 24 hours
-o	Exclusive view for MAJOR incident tickets (if preferences are set)
-o	Exclusive view for P1 priority tickets (if preferences are set)
-o	Exclusive view for P2 priority tickets (if preferences are set)
+                                        <string key="content">You can see the tickets visible via Location Pins which are colour coded to represent the ticket priority. 
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">•	You can also select a certain priority and see tickets of that priority only. This may need your preferences to be suitably set.
-•	A tabular view is also available via the icon on top right of the map
-•	A refresh button is provided on the bottom right which will refresh the view based on your preference settings. Any other filters would be reset upon hitting the refresh button.
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">The colour of the pin in case of multiple tickets would be the highest priority colour for the tickets at that location
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">A location pin with a “badge count” containing numbers represent the total number of tickets at that plant / location.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">In case of “badge count” tickets there would be a carousel at the bottom to scroll and see through multiple tickets
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Clicking on a ticket in the carousel would take you to the detailed view on the tickets with timeline and other details.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">All times mentioned on the ticket are based on the time timestamp on the server where the ticket is hosted e.g. a ticket for a MB Plant in Japan may be raised in CISM Germany instance and hence the time stamps may be aligned with Germany time. 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">The filter bar contains 5 different views 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">o	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">NEW: the tickets for past 24 hours, or toggle
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">o	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">ALL: the tickets for past 4 weeks
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">o	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">MAJOR: Exclusive view for MAJOR incident tickets (if preferences are set)
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">o	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">P1: Exclusive view for P1 priority tickets (if preferences are set)
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">o	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="CourierNewPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">P2: Exclusive view for P2 priority tickets (if preferences are set)
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="54" headIndent="72" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">You can also select a certain priority and see tickets of that priority only. This may need your preferences to be suitably set.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">A tabular view is also available via the icon on top right of the map
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">•	</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="Symbol"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">A refresh button is provided on the bottom right which will refresh the view based on your preference settings. Any other filters would be reset upon hitting the refresh button.
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" firstLineHeadIndent="18" headIndent="36" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
                                         <string key="content">Will the data in the map get refreshed automatically?
-No. While the APP is open there is a manual refresh using the refresh icon on bottom right of the map. However while the App is closed, you will get notifications for MAJOR incidents only and if you open the app it would result in the latest status to be fetched from the server.
+Yes. The data in the app gets refreshed every 3 minutes.
 
 Can I set the preferences?
-Yes. Tap on the hamburger menu and select ‘Preferences’ menu. There you can customize your view in terms Priority and Time Zone. After selecting, tap ‘Save’ at the top right of the app. And refresh on the world map page, the data on screen would be refreshed according to the latest preferences set.
+Yes. Tap on the hamburger menu and select ‘Preferences’ menu. There you can customize your view in terms Priority. After selecting, tap ‘Save’ at the top right of the app. And refresh on the world map page, the data on screen would be refreshed according to the latest preferences set.
 
 Not able to view P1 or P2 tickets?
 If you are getting an alert stating, ‘Sorry your preference is not set for the selected option. To view, please modify your preferences’. It means you have not selected the preference for either P1 or P2 or both. To view other tickets, please change your preferences accordingly and refresh the MIT map page.
+
 </string>
                                         <attributes>
-                                            <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="468" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <font key="NSFont" size="12" name="TimesNewRomanPSMT"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" tailIndent="451" lineHeightMultiple="1.0791666666666666" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -2171,11 +2417,11 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIs-Q5-TqM">
-                                <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIs-Q5-TqM">
+                                <rect key="frame" x="0.0" y="164" width="600" height="436"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="486-ww-Ggf">
-                                        <rect key="frame" x="15" y="15" width="570" height="450"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="486-ww-Ggf">
+                                        <rect key="frame" x="15" y="15" width="570" height="406"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -2255,25 +2501,44 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                                     <constraint firstAttribute="trailing" secondItem="486-ww-Ggf" secondAttribute="trailing" constant="15" id="y4P-KF-kJC"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SoF-Ul-nS1">
-                                <rect key="frame" x="0.0" y="120" width="600" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoF-Ul-nS1">
+                                <rect key="frame" x="0.0" y="164" width="600" height="70"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Zone :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdk-Qi-fs9">
+                                        <rect key="frame" x="8" y="0.0" width="90" height="25"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="QCH-kz-nba"/>
+                                            <constraint firstAttribute="width" constant="90" id="TdO-Ha-3Lk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B0-AM-uXi">
+                                        <rect key="frame" x="100" y="4" width="492" height="18"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNO-Cy-Wx9">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
+                                        <rect key="frame" x="0.0" y="25" width="200" height="45"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOJ-uY-cTM">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="45"/>
+                                        <rect key="frame" x="200" y="25" width="200" height="45"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGU-4f-yVK">
-                                        <rect key="frame" x="400" y="0.0" width="200" height="45"/>
+                                        <rect key="frame" x="400" y="25" width="200" height="45"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2288,18 +2553,23 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                                     <constraint firstItem="fOJ-uY-cTM" firstAttribute="leading" secondItem="yNO-Cy-Wx9" secondAttribute="trailing" id="6fY-S5-Cdc"/>
                                     <constraint firstAttribute="bottom" secondItem="yNO-Cy-Wx9" secondAttribute="bottom" id="8Dy-wu-oQf"/>
                                     <constraint firstItem="fOJ-uY-cTM" firstAttribute="width" secondItem="yNO-Cy-Wx9" secondAttribute="width" id="8RH-XR-yGq"/>
-                                    <constraint firstItem="yNO-Cy-Wx9" firstAttribute="top" secondItem="SoF-Ul-nS1" secondAttribute="top" id="Gsq-mI-VSN"/>
+                                    <constraint firstItem="bdk-Qi-fs9" firstAttribute="top" secondItem="SoF-Ul-nS1" secondAttribute="top" id="ELs-kD-OkI"/>
+                                    <constraint firstItem="yNO-Cy-Wx9" firstAttribute="top" secondItem="SoF-Ul-nS1" secondAttribute="top" constant="25" id="Gsq-mI-VSN"/>
                                     <constraint firstItem="PGU-4f-yVK" firstAttribute="width" secondItem="yNO-Cy-Wx9" secondAttribute="width" id="IAF-Yd-z6Y"/>
-                                    <constraint firstItem="PGU-4f-yVK" firstAttribute="top" secondItem="SoF-Ul-nS1" secondAttribute="top" id="ObX-FL-3Hw"/>
-                                    <constraint firstItem="fOJ-uY-cTM" firstAttribute="top" secondItem="SoF-Ul-nS1" secondAttribute="top" id="WlE-SE-LAr"/>
-                                    <constraint firstAttribute="height" constant="45" id="Yc2-H3-3bi"/>
+                                    <constraint firstItem="5B0-AM-uXi" firstAttribute="leading" secondItem="bdk-Qi-fs9" secondAttribute="trailing" constant="2" id="TFQ-Ze-d7e"/>
+                                    <constraint firstItem="fOJ-uY-cTM" firstAttribute="top" secondItem="yNO-Cy-Wx9" secondAttribute="top" id="Y9z-sj-wBs"/>
+                                    <constraint firstAttribute="height" constant="70" id="Yc2-H3-3bi"/>
+                                    <constraint firstItem="bdk-Qi-fs9" firstAttribute="leading" secondItem="SoF-Ul-nS1" secondAttribute="leading" constant="8" id="dDt-YD-DqU"/>
+                                    <constraint firstItem="PGU-4f-yVK" firstAttribute="top" secondItem="fOJ-uY-cTM" secondAttribute="top" id="iBx-OF-mAf"/>
                                     <constraint firstAttribute="bottom" secondItem="PGU-4f-yVK" secondAttribute="bottom" id="maV-v1-rzE"/>
+                                    <constraint firstItem="5B0-AM-uXi" firstAttribute="centerY" secondItem="bdk-Qi-fs9" secondAttribute="centerY" id="qLD-W2-Kd4"/>
                                     <constraint firstItem="yNO-Cy-Wx9" firstAttribute="leading" secondItem="SoF-Ul-nS1" secondAttribute="leading" id="tmq-fr-hEW"/>
+                                    <constraint firstAttribute="trailing" secondItem="5B0-AM-uXi" secondAttribute="trailing" constant="8" id="ubB-ue-dht"/>
                                     <constraint firstAttribute="bottom" secondItem="fOJ-uY-cTM" secondAttribute="bottom" id="waS-n0-H95"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ycs-yK-IRv">
-                                <rect key="frame" x="0.0" y="165" width="600" height="435"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycs-yK-IRv">
+                                <rect key="frame" x="0.0" y="234" width="600" height="366"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUV-zN-jTd">
                                         <rect key="frame" x="10" y="20" width="60" height="66"/>
@@ -2355,11 +2625,11 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSJ-Vf-aYI">
-                                        <rect key="frame" x="560" y="30" width="25" height="375"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSJ-Vf-aYI">
+                                        <rect key="frame" x="560" y="30" width="25" height="306"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10J-ID-K7p">
-                                                <rect key="frame" x="12" y="10" width="1" height="355"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10J-ID-K7p">
+                                                <rect key="frame" x="12" y="10" width="1" height="286"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -2412,8 +2682,8 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SLA Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbv-WR-g9g">
-                                        <rect key="frame" x="480" y="384" width="72" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLA Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbv-WR-g9g">
+                                        <rect key="frame" x="480" y="315" width="72" height="21"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="72" id="Loq-ej-qmM"/>
@@ -2608,15 +2878,18 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SLAProgressLabel" destination="Mbv-WR-g9g" id="w50-hw-bUR"/>
                         <outlet property="caalButtonWidthCnt" destination="mEr-Ek-Ylj" id="csb-Tn-GlX"/>
                         <outlet property="closureExpLabel" destination="PGU-4f-yVK" id="G5z-qO-7Q8"/>
-                        <outlet property="createdLabel" destination="yNO-Cy-Wx9" id="CkC-oV-chw"/>
+                        <outlet property="createdLabel" destination="yNO-Cy-Wx9" id="uHk-gJ-q0f"/>
+                        <outlet property="createdProgressLabel" destination="wBb-Fz-yzN" id="WB6-d0-QVX"/>
                         <outlet property="detailsLabel" destination="ePh-RG-aTF" id="Iz0-cP-lx4"/>
                         <outlet property="detailsView" destination="FIs-Q5-TqM" id="jUK-EK-aQR"/>
                         <outlet property="lastModifiedLabel" destination="fOJ-uY-cTM" id="4RR-ur-CAl"/>
                         <outlet property="listTableView" destination="486-ww-Ggf" id="iTz-ti-yEM"/>
                         <outlet property="progressHgtCnt" destination="R3G-9Y-aai" id="9hT-xH-2dO"/>
                         <outlet property="progressImageView" destination="62X-Ht-dSX" id="cHs-5s-7A8"/>
+                        <outlet property="progressOuterView" destination="qSJ-Vf-aYI" id="THh-6h-QiO"/>
                         <outlet property="progressStatusView" destination="QvX-co-a1f" id="Wff-SW-xDS"/>
                         <outlet property="selectionIndicatorView1" destination="yIh-8K-qNl" id="IZf-Bm-dhN"/>
                         <outlet property="selectionIndicatorView2" destination="koX-fh-XiC" id="GYm-II-U4a"/>
@@ -2635,6 +2908,7 @@ If you are getting an alert stating, ‘Sorry your preference is not set for the
                         <outlet property="timelineDetailsView" destination="ycs-yK-IRv" id="mgk-Ep-BQU"/>
                         <outlet property="timelineInfoView" destination="SoF-Ul-nS1" id="MQr-jQ-2Yq"/>
                         <outlet property="timelineLabel" destination="4W9-uH-MDm" id="NJT-B2-npk"/>
+                        <outlet property="timezoneLabel" destination="5B0-AM-uXi" id="O2j-xx-RMb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3T-an-1Ae" userLabel="First Responder" sceneMemberID="firstResponder"/>

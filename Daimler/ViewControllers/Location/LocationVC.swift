@@ -51,6 +51,7 @@ class IncidentDetailModel : NSObject
     var serviceDeskNumber : String = ""
     var shortDescription : String = ""
     var slaTime : String = ""
+    var timeZone : String = ""
     var source : String = ""
     var status : String = ""
     var statusAttribute : String = ""
@@ -97,6 +98,7 @@ class IncidentDetailModel : NSObject
         self.ticketId  = dictionary.objectForKey("TICKET_ID") as! String
         self.typeAttribute  = dictionary.objectForKey("TYPE_ATTRIBUTE") as! String
         self.coordinate = CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
+        self.timeZone = dictionary.objectForKey("TIME_ZONE") as! String
     }
     
     func convertStringCoordinateToDoubleLatitude(coordinate : String) -> Double{
@@ -243,6 +245,9 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     var totalIncidentList : [[IncidentDetailModel]] = []
     var locationManager: CLLocationManager = CLLocationManager()
     
+    var timer : NSTimer?
+    var isLoading : Bool = false
+    
     // MARK: VIEWCONTROLLER DELEGATES
     
     override func viewDidLoad() {
@@ -256,8 +261,8 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
         
         self.setInitialStateForMoreCondition()
         self.segmentControl.selectedSegmentIndex = 0
-        self.segmentControlValueChanged(self.segmentControl)
         self.setButtonToNormal()
+        self.segmentControlValueChanged(self.segmentControl)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -267,30 +272,69 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     
     override func viewDidAppear(animated: Bool)
     {
-        
+        self.startAutoRefreshTimer()
+    }
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        self.invalidateAutoRefreshTimer()
     }
     
     //MARK:- Other properties
     
-    func getListOfIncident()
+    func getListOfIncident(isAutoRefresh : Bool)
     {
+        self.isLoading = true
         self.setButtonToNormal()
-        let appDelegate = CommonFunctions.getAppDelegate()
-        CommonFunctions.showIndicatorView(appDelegate.window! ,isInteractionEnabled: false )
-        
+        if !isAutoRefresh
+        {
+            CommonFunctions.showIndicatorView(CommonFunctions.getAppDelegate().window! ,isInteractionEnabled: false )
+        }
         var ticketType : String = "NEW"
         if segmentControl.selectedSegmentIndex == 1
         {
             ticketType = "ALL"
         }
-        
         ServiceHelper.getListOfLocations(ticketType, completionHandler : { (detailDictionary, error ) -> Void in
-            CommonFunctions.hideIndicatorView(appDelegate.window!)
+            self.isLoading = false
+            if !isAutoRefresh
+            {
+                CommonFunctions.hideIndicatorView(CommonFunctions.getAppDelegate().window!)
+            }
             if error == nil
             {
-                if let locationList = (detailDictionary?.objectForKey("ArrayOfRetTickets") as? NSDictionary)?.objectForKey("RetTickets") as? NSArray
+                if let ticketDetail = detailDictionary?.objectForKey("ArrayOfRetTickets") as? NSDictionary
                 {
-                    self.setTotalIncidentListFromServer(IncidentDetailModel.convertListOfDictionaryIntoIncidentDetail(locationList))
+                    if let locationList = ticketDetail.objectForKey("RetTickets")
+                    {
+                        
+                        if locationList.isKindOfClass(NSArray)
+                        {
+                            self.setTotalIncidentListFromServer(IncidentDetailModel.convertListOfDictionaryIntoIncidentDetail(locationList as! NSArray))
+                        }
+                        else if let locationDetail = locationList as? NSDictionary
+                        {
+                            if locationDetail.count > 3
+                            {
+                                self.setTotalIncidentListFromServer(IncidentDetailModel.convertListOfDictionaryIntoIncidentDetail([locationDetail]))
+                            }
+                            else
+                            {
+                                self.setTotalIncidentListFromServer([])
+                                CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                            }
+                        }
+                        else
+                        {
+                            self.setTotalIncidentListFromServer([])
+                            CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                        }
+                    }
+                    else
+                    {
+                        self.setTotalIncidentListFromServer([])
+                        CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                    }
                 }
                 else
                 {
@@ -324,9 +368,14 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
             }
             else
             {
-                let incidentDetail = listOfIncident[0]
+                let sortedArray = listOfIncident.sort({ (obj1, obj2) -> Bool in
+                    let majorType : [String : Int] = ["MAJOR" : 0, "1":1, "2" : 2]
+                    return majorType[obj1.incidentType.uppercaseString] < majorType[obj2.incidentType.uppercaseString]
+                })
+                let incidentDetail = sortedArray[0]
                 let groupAnnotation = GroupIncidentAnnotation.init(latitude: incidentDetail.latitude, longitude: incidentDetail.longitude)
-                groupAnnotation.incidentDetailList = listOfIncident
+                
+                groupAnnotation.incidentDetailList = sortedArray
                 groupAnnotation.title = incidentDetail.plantName
                 groupAnnotation.subtitle = incidentDetail.ownerPlant
                 self.mapView.addAnnotation(groupAnnotation)
@@ -619,12 +668,12 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     
     @IBAction func reloadMapViewButtonAction(sender: AnyObject)
     {
-        self.getListOfIncident()
+        self.getListOfIncident(false)
     }
     
     @IBAction func segmentControlValueChanged(sender: UISegmentedControl)
     {
-        self.getListOfIncident()
+        self.getListOfIncident(false)
     }
     // MARK: MAP VIEW DELEGATES
     
@@ -897,6 +946,32 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     func loadMapForIncidentDetailList(incidentDetailList: [IncidentDetailModel])
     {
         self.setTotalIncidentListFromServer(incidentDetailList)
+    }
+    
+    
+    //MARK:- Timer function
+    
+    func startAutoRefreshTimer()
+    {
+        self.invalidateAutoRefreshTimer()
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(180.0, target: self, selector: "autoRefreshWebservice", userInfo: nil, repeats: true)
+    }
+    
+    func invalidateAutoRefreshTimer()
+    {
+        if let refreshTimer = self.timer
+        {
+            refreshTimer.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    func autoRefreshWebservice()
+    {
+        if !self.isLoading
+        {
+            self.getListOfIncident(true)
+        }
     }
     
 }
