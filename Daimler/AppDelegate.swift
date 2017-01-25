@@ -9,7 +9,8 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     
     var window: UIWindow?
     
@@ -25,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = GlobalVariables.navigationBarColor()
         
         registerForPushNotifications(application)
+        
+        let reachability = Reachability.reachabilityForInternetConnection()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkVPNConnection", name: ReachabilityChangedNotification, object: nil)
+        reachability?.startNotifier()
         
         if CommonFunctions.getUserName() != ""
         {
@@ -43,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //            let rootViewController = main_Sb.instantiateViewControllerWithIdentifier("TitleViewController") as! TitleViewController
             //            self.window?.rootViewController = rootViewController
         }
+        self.checkVPNConnection()
         
         return true
     }
@@ -57,13 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(application: UIApplication)
+    {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         application.applicationIconBadgeNumber = 0
+        self.checkVPNConnection()
     }
     
     func applicationWillTerminate(application: UIApplication) {
@@ -137,6 +146,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                 }
                 
+            }
+        }
+    }
+    
+    func checkVPNConnection()
+    {
+        if ServiceHelper.checkInternetConnection()
+        {
+            if !CommonFunctions.getIFAddresses().contains(domainUrl)
+            {
+                let alert = UIAlertController(title: "VPN settings", message: "Please turn on your VPN connection.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
+                    (alert: UIAlertAction!) in
+                    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+                }))
+                self.window?.rootViewController!.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }

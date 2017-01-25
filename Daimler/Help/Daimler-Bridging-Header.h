@@ -5,3 +5,4 @@
 
 #import "XMLConverter.h"
 #import "CryptLib.h"
+#include <ifaddrs.h>
