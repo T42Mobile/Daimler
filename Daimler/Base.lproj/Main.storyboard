@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -3102,6 +3102,9 @@ Version - 1.0.1</string>
                             <constraint firstItem="i8s-Hv-F0c" firstAttribute="leading" secondItem="cgQ-cj-PzU" secondAttribute="leading" id="z9x-UP-SPY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="eIe-4I-oLL" id="Gza-Ec-wry"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0p7-Gh-3OP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,12 +8,16 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    @IBOutlet weak var aboutLabel: UILabel!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.aboutLabel.text = "MIT - Mobile Incident Tracker\nVersion - " + self.applicationVersion()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +28,16 @@ class AboutViewController: UIViewController {
     @IBAction func backButtonAction(sender: AnyObject)
     {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func applicationVersion() -> String
+    {
+        if let version = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
+        {
+            return version
+        }
+        
+        return ""
     }
 
 }

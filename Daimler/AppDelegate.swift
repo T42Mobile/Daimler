@@ -43,13 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             slideMenuController.automaticallyAdjustsScrollViewInsets = true
             slideMenuController.delegate = mainViewController
             self.window?.rootViewController = slideMenuController
-            
-            //            let main_Sb = UIStoryboard(name: "Main", bundle: nil)
-            //            let rootViewController = main_Sb.instantiateViewControllerWithIdentifier("TitleViewController") as! TitleViewController
-            //            self.window?.rootViewController = rootViewController
         }
-        self.checkVPNConnection()
-        
         return true
     }
     
@@ -69,7 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(application: UIApplication)
+    {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         application.applicationIconBadgeNumber = 0
         self.checkVPNConnection()
@@ -86,8 +81,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        if notificationSettings.types != .None {
+        if notificationSettings.types != .None
+        {
             application.registerForRemoteNotifications()
+        }
+        else
+        {
+            self.checkVPNConnection()
         }
     }
     
@@ -154,13 +154,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         if ServiceHelper.checkInternetConnection()
         {
-            if !CommonFunctions.getIFAddresses().contains(domainUrl)
+            if !CommonFunctions.getIFAddresses().contains(ServiceHelper.getDomainUrl())
             {
                 let alert = UIAlertController(title: "VPN settings", message: "Please turn on your VPN connection.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler:nil))
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {
+                alert.addAction(UIAlertAction(title: "Settings", style: UIAlertActionStyle.Default, handler: {
                     (alert: UIAlertAction!) in
-                    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+                    
+                    let osVersion = (UIDevice.currentDevice().systemVersion as NSString).doubleValue
+                    let url : NSURL!
+                    if osVersion >= 10.0
+                    {
+                        url = NSURL(string: "App-Prefs:root=General&path=Network/VPN")!
+                    }
+                    else
+                    {
+                        url = NSURL(string:"prefs:root=General&path=Network/VPN")!
+                    }
+                    UIApplication.sharedApplication().openURL(url)
                 }))
                 self.window?.rootViewController!.presentViewController(alert, animated: true, completion: nil)
             }

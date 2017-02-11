@@ -265,11 +265,6 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
         self.segmentControlValueChanged(self.segmentControl)
     }
     
-    override func viewWillAppear(animated: Bool)
-    {
-        
-    }
-    
     override func viewDidAppear(animated: Bool)
     {
         self.startAutoRefreshTimer()
@@ -320,32 +315,31 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
                             }
                             else
                             {
-                                self.setTotalIncidentListFromServer([])
-                                CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                                self.showNoTicketAvailableAlert(isAutoRefresh)
                             }
                         }
                         else
                         {
-                            self.setTotalIncidentListFromServer([])
-                            CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                            self.showNoTicketAvailableAlert(isAutoRefresh)
                         }
                     }
                     else
                     {
-                        self.setTotalIncidentListFromServer([])
-                        CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                        self.showNoTicketAvailableAlert(isAutoRefresh)
                     }
                 }
                 else
                 {
-                    self.setTotalIncidentListFromServer([])
-                    CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+                    self.showNoTicketAvailableAlert(isAutoRefresh)
                 }
             }
             else
             {
                 self.setTotalIncidentListFromServer([])
-                CommonFunctions.showAlertView("Alert", message : error?.localizedDescription, viewController : self)
+                if !isAutoRefresh
+                {
+                    CommonFunctions.showAlertView("Alert", message : error?.localizedDescription, viewController : self)
+                }
             }
         })
     }
@@ -381,7 +375,19 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
                 self.mapView.addAnnotation(groupAnnotation)
             }
         }
-        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+        
+        let annotaions = self.mapView.annotations
+        
+        if annotaions.count == 1
+        {
+            let regionRadius: CLLocationDistance = 1000
+            let region = MKCoordinateRegionMakeWithDistance(annotaions[0].coordinate, regionRadius, regionRadius)
+            self.mapView.setRegion(region, animated: true)
+        }
+        else
+        {
+            self.mapView.showAnnotations(annotaions, animated: true)
+        }
     }
     
     //MARK: Collection view
@@ -878,35 +884,6 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
         self.mapView.removeAnnotations(self.mapView.annotations)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //        if segue.identifier == "unwindFromLocationList" {
-        //            if let button = sender as? UIButton {
-        //                if button.tag == 0 {
-        //                    // prepare annotation and readd all contents
-        //                    self.filteredArray = self.filterAnnotations(.Major)
-        //                }
-        //                else if button.tag == 1 {
-        //                    self.filteredArray = self.filterAnnotations(.P1)
-        //                }
-        //                else if button.tag == 2 {
-        //                    self.filteredArray = self.filterAnnotations(.P2)
-        //                }
-        //
-        //                self.removeAllAnnotations()
-        //                self.mapView.addAnnotations(self.filteredArray)
-        //            }
-        //        }
-        //        else if segue.identifier == "MapToLocationList" {
-        //            guard let listVC = segue.destinationViewController as? LocationListVC else {
-        //                return
-        //            }
-        //            listVC.annotationArray = self.annotationArray
-        //            listVC.majorArray = self.filterAnnotations(.Major)
-        //            listVC.p1Array = self.filterAnnotations(.P1)
-        //            listVC.p2Array = self.filterAnnotations(.P2)
-        //        }
-    }
-    
     @IBAction func unwindFromLocationList(segue: UIStoryboardSegue) {
         //        guard let listVC = segue.sourceViewController as? LocationListVC else {
         //            return
@@ -946,6 +923,15 @@ class LocationVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate
     func loadMapForIncidentDetailList(incidentDetailList: [IncidentDetailModel])
     {
         self.setTotalIncidentListFromServer(incidentDetailList)
+    }
+    
+    func showNoTicketAvailableAlert(isAutoRefresh : Bool)
+    {
+        if !isAutoRefresh
+        {
+            CommonFunctions.showAlertView("Alert", message : "No tickets available", viewController : self)
+        }
+        self.setTotalIncidentListFromServer([])
     }
     
     
